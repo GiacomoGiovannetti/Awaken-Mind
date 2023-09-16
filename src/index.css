@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .home-button {
+    @apply border;
+    @apply border-b-2;
+    @apply rounded-xl;
+    @apply border-slate-900;
+    @apply mt-3;
+    @apply p-1;
+    @apply text-lg;
+  }
+
+  .mobile-menu {
+    @apply border-b-2;
+    @apply border-slate-900;
+    @apply my-2;
+    @apply mx-2;
+    @apply px-2;
+    @apply hover:scale-105;
+  }
+
+  .desktop-menu {
+    @apply relative;
+    @apply border-b-0;
+    @apply text-xl;
+    @apply after:absolute;
+    @apply after:w-full;
+    @apply after:scale-x-0;
+    @apply after:h-[0.10rem];
+    @apply after:top-7;
+    @apply after:left-0;
+    @apply after:bg-slate-900;
+    @apply after:opacity-90;
+    @apply after:origin-bottom-right;
+    @apply after:transition-transform;
+    @apply after:duration-[300ms];
+    @apply after:ease-out;
+    @apply hover:after:scale-x-100;
+    @apply hover:after:origin-bottom-left;
+    @apply active:text-slate-400;
+  }
+}

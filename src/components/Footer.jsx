@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <Footer>
-      <p>Copyright &copy; Giacomo Giovannetti 2023 </p>
-    </Footer>
+    <footer className="h-auto mt-auto text-center text-slate-900 italic">
+      <p> &copy; 2023 | Giacomo Giovannetti </p>
+    </footer>
   );
 };
