@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import PathContext from "../context";
+import PathContext from "../context/context";
 import { FaBars } from "react-icons/fa";
 
 export const MobileMenu = ({ linkPresets }) => {

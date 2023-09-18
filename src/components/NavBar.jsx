@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react";
 import viteLogo from "/vite.svg";
 import { FaLightbulb, FaRegLightbulb, FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import PathContext from "../context";
+import PathContext from "../context/context";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 

@@ -5,7 +5,7 @@ import { Home } from "./pages/Home";
 import { CustomMeditations } from "./pages/CustomMeditations";
 import { GuidedMeditations } from "./pages/GuidedMeditation";
 import { FirstSteps } from "./pages/FirstSteps";
-import { PathProvider } from "./context";
+import { PathProvider } from "./context/context";
 import { Footer } from "./components/Footer";
 
 export default function App() {
