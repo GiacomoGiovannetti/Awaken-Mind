@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PathContext from "../context/context";
+import PathContext from "../context/pathContext";
 
 export const DesktopMenu = ({ linkPresets }) => {
   const { pathName } = useContext(PathContext);

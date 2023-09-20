@@ -1,7 +1,7 @@
-import meditatingGuy from "../assets/meditating-guy.png";
+import meditatingGuy from "../assets/images/meditating-guy.png";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import PathContext from "../context/context";
+import PathContext from "../context/pathContext";
 
 export const Home = () => {
   const { updateNav } = useContext(PathContext);

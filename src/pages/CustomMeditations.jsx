@@ -1,173 +1,70 @@
-import { useState, useEffect, useRef } from "react";
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { FaPlay, FaStop, FaPause } from "react-icons/fa6";
-
-const TIME_PRESETS = [
-  { id: "5 minutes", value: 300 },
-  { id: "10 minutes", value: 600 },
-  { id: "15 minutes", value: 900 },
-];
+import { useEffect, useRef, useState, useContext } from "react";
+import { Timer } from "../components/Timer";
+import DataContext from "../context/dataContext";
 
 export const CustomMeditations = () => {
-  const [timerDuration, setTimerDuration] = useState(0);
-  const [timerValue, setTimerValue] = useState(0);
-  const [customDuration, setCustomDuration] = useState("");
-  const [seconds, setSeconds] = useState("0" + 0);
-  const [minutes, setMinutes] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+  const { soundtracks } = useContext(DataContext);
 
-  //Display durata meditazione dentro al cerchio
-  const timeElement = ({ remainingTime }) => {
-    return (
-      <div>
-        <span>
-          <h3>{minutes} :</h3>
-        </span>
-        <span>
-          <h3>{seconds}</h3>
-        </span>
-      </div>
-    );
-  };
+  //state soundtracks
+  const [soundtrack, setSoundtrack] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  //creazione pulsanti per preset durata
-  const timePresetsElements = TIME_PRESETS.map((preset) => {
-    return (
-      <button
-        value={preset.value}
-        key={preset.id}
-        onClick={() => setTimer(preset.value)}
-      >
-        {preset.id}
+  //state audioEl. / volume
+  const soundtrackRef = useRef();
+  const [soundtrackVolume, setSoundtrackVolume] = useState(0.5);
+
+  //creazione elementi soundtracks
+  const soundtrackItems = soundtracks.map((soundtrack) => (
+    <div key={soundtrack.id}>
+      <button onClick={() => handleClick(soundtrack.src)}>
+        {soundtrack.icon}
       </button>
-    );
-  });
+      <p>{soundtrack.id}</p>
+    </div>
+  ));
 
-  //imposta durata timer
-  const setTimer = (value) => {
-    setTimerDuration(value);
-    setTimerValue(value);
-  };
-
-  //Fa partire il timer
-  const startTimer = (e) => {
-    if (timerValue === 0) {
-      e.preventDefault;
-    } else {
-      setIsRunning((prev) => !prev);
+  //funzione per far partire la soundtrack e fermarla
+  const handleClick = (sound) => {
+    setSoundtrack(sound);
+    if (soundtrack === sound || !isPlaying) {
+      setIsPlaying((prev) => !prev);
     }
   };
 
-  //ferma il timer e imposta i valori su 0
-  const stopTimer = () => {
-    setIsRunning(false);
-    setTimer(0);
-    console.log("triggeri");
-  };
-
-  //ferma il timer al cambio di scheda del browser
-  const onTabChange = () => {
-    if (document.hidden && timerValue !== 0) {
-      setIsRunning(false);
-    }
-  };
-
-  //aggiornare i valori di minutes e seconds
-  const updateTimerDisplay = () => {
-    let secondsValue = Math.floor(timerValue % 60);
-    setSeconds(secondsValue < 10 ? "0" + secondsValue : secondsValue);
-    setMinutes(Math.floor(timerValue / 60));
-  };
-
-  //gestione onChange per input
+  // funzione per impostare il volume delle soundtracks
   const handleChange = (e) => {
-    let value = e.target.value;
-    let reg = /^[0-9]+$/;
-    if (reg.test(value) || value === "") {
-      let intValue = parseInt(value);
-      setCustomDuration(value);
-      console.log("sono solo numeri", intValue);
-    }
+    let volume = e.target.value;
+    setSoundtrackVolume(volume);
   };
 
-  //gestione Submit
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (customDuration != "") {
-      setTimer(customDuration * 60);
-      console.log("invio");
-    }
-  };
-
-  let intervalRef = useRef();
-
-  //aggiorna il valore del timer
+  //gestione aggiornamenti state relativi alle soundtracks
   useEffect(() => {
-    if (isRunning) {
-      intervalRef.current = setInterval(() => {
-        console.log("intervallo attivo: ", isRunning);
-        setTimerValue((prevDuration) => prevDuration - 1);
-        updateTimerDisplay();
-      }, 1000);
+    const audioElement = soundtrackRef.current;
+    if (isPlaying) {
+      audioElement.play();
+      audioElement.volume = soundtrackVolume;
+    } else if (!isPlaying) {
+      audioElement.pause();
     }
-    if (!isRunning) {
-      clearInterval(intervalRef.current);
-      console.log("intervallo disattivato : ", isRunning, timerDuration);
-      updateTimerDisplay();
-    }
-
-    onTabChange();
-
-    return () => {
-      clearInterval(intervalRef.current);
-    };
-  }, [isRunning, timerValue]);
+  }, [soundtrack, isPlaying, soundtrackVolume]);
 
   return (
     <div>
       <div className="timer-buttons flex flex-col items-center">
-        <CountdownCircleTimer
-          key={timerDuration}
-          isPlaying={isRunning ? true : false}
-          duration={timerDuration}
-          trailColor="#FFFF"
-          colors="#A30000"
-          onComplete={stopTimer}
-        >
-          {timeElement}
-        </CountdownCircleTimer>
-        <div className="time-presets">{timePresetsElements}</div>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="duration-amount">Minutes :</label>
-          <input
-            type="text"
-            name="duration-amount"
-            id="duration-amount"
-            placeholder="Type in desired duration"
-            value={customDuration}
-            onChange={handleChange}
-          ></input>
-          <button type="submit">Set</button>
-        </form>
-        <div className="stop-play flex flex-row">
-          <button className="flex flex-row items-center" onClick={startTimer}>
-            {isRunning ? (
-              <>
-                Pause <FaPause />
-              </>
-            ) : (
-              <>
-                Play <FaPlay />
-              </>
-            )}
-          </button>
-          <button className="flex flex-row items-center" onClick={stopTimer}>
-            Stop <FaStop />
-          </button>
-        </div>
+        <Timer />
       </div>
-      <div className="soundtracks">SOUNDTRACKS</div>
+      <div className="soundtracks flex flex-row justify-center">
+        {soundtrackItems}
+        <audio ref={soundtrackRef} src={soundtrack} loop></audio>
+        <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.02}
+          value={soundtrackVolume}
+          onChange={handleChange}
+        ></input>
+      </div>
     </div>
   );
 };
