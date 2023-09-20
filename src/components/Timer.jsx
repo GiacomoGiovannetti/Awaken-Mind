@@ -87,7 +87,7 @@ export const Timer = () => {
   }, [isRunning, timerValue]);
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <CountdownCircleTimer
         key={timerDuration}
         isPlaying={isRunning ? true : false}
