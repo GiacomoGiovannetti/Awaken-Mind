@@ -69,6 +69,12 @@ export const DataProvider = ({ children }) => {
     ),
   };
 
+  const timePresets = [
+    { id: "5 minutes", value: 300 },
+    { id: "10 minutes", value: 600 },
+    { id: "15 minutes", value: 900 },
+  ];
+
   const soundtracks = [
     {
       id: "Fireplace",
@@ -113,7 +119,7 @@ export const DataProvider = ({ children }) => {
   ];
 
   return (
-    <DataContext.Provider value={{ navLinksPresets, soundtracks }}>
+    <DataContext.Provider value={{ navLinksPresets, timePresets, soundtracks }}>
       {children}
     </DataContext.Provider>
   );

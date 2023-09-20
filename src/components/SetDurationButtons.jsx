@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import TimerContext from "../context/timerContext";
+import DataContext from "../context/dataContext";
 
-const TIME_PRESETS = [
-  { id: "5 minutes", value: 300 },
-  { id: "10 minutes", value: 600 },
-  { id: "15 minutes", value: 900 },
-];
-
-export const SetDurationButtons = ({ setTimer }) => {
+export const SetDurationButtons = () => {
+  const { timePresets } = useContext(DataContext);
+  const { setTimer } = useContext(TimerContext);
   const [customDuration, setCustomDuration] = useState("");
 
   //gestione onChange per input
@@ -31,7 +29,7 @@ export const SetDurationButtons = ({ setTimer }) => {
   };
 
   //creazione pulsanti per preset durata
-  const timePresetsElements = TIME_PRESETS.map((preset) => {
+  const timePresetsElements = timePresets.map((preset) => {
     return (
       <button
         value={preset.value}

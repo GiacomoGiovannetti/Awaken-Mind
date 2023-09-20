@@ -1,15 +1,22 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { FaPlay, FaStop, FaPause } from "react-icons/fa6";
-import { SetDurationButtons } from "./SetDurationButtons";
 import ding from "../assets/sounds/ding.mp3";
+import TimerContext from "../context/timerContext";
+import { SetDurationButtons } from "./SetDurationButtons";
 
 export const Timer = () => {
-  const [timerDuration, setTimerDuration] = useState(0);
-  const [timerValue, setTimerValue] = useState(0);
+  const {
+    timerDuration,
+    timerValue,
+    isRunning,
+    setTimerValue,
+    setIsRunning,
+    setTimer,
+  } = useContext(TimerContext);
+
   const [seconds, setSeconds] = useState("0" + 0);
   const [minutes, setMinutes] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
 
   //Display durata meditazione dentro al cerchio
   const timeElement = ({ remainingTime }) => {
@@ -23,12 +30,6 @@ export const Timer = () => {
         </span>
       </div>
     );
-  };
-
-  //imposta durata timer
-  const setTimer = (value) => {
-    setTimerDuration(value);
-    setTimerValue(value);
   };
 
   //Fa partire il timer
@@ -79,6 +80,8 @@ export const Timer = () => {
       updateTimerDisplay();
     }
 
+    console.log(timerValue);
+
     onTabChange();
 
     return () => {
@@ -98,7 +101,6 @@ export const Timer = () => {
       >
         {timeElement}
       </CountdownCircleTimer>
-      <SetDurationButtons setTimer={setTimer} />
       <div className="stop-play flex flex-row">
         <button className="flex flex-row items-center" onClick={startTimer}>
           {isRunning ? (
