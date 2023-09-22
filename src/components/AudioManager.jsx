@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const AudioManager = ({ soundtrack, isPlaying }) => {
+export const AudioManager = ({ audio, isPlaying }) => {
   //state audioEl. / volume
   const soundtrackRef = useRef();
   const [soundtrackVolume, setSoundtrackVolume] = useState(0.5);
@@ -20,11 +20,11 @@ export const AudioManager = ({ soundtrack, isPlaying }) => {
     } else if (!isPlaying) {
       audioElement.pause();
     }
-  }, [soundtrack, isPlaying, soundtrackVolume]);
+  }, [audio, isPlaying, soundtrackVolume]);
 
   return (
     <>
-      <audio ref={soundtrackRef} src={soundtrack} loop></audio>
+      <audio ref={soundtrackRef} src={audio} loop></audio>
       <input
         type="range"
         min={0}

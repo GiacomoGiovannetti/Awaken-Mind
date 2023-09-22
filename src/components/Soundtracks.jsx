@@ -30,7 +30,7 @@ export const Soundtracks = () => {
   return (
     <div className="soundtracks flex flex-row justify-center">
       {soundtrackItems}
-      <AudioManager soundtrack={soundtrack} isPlaying={isPlaying} />
+      <AudioManager audio={soundtrack} isPlaying={isPlaying} />
     </div>
   );
 };

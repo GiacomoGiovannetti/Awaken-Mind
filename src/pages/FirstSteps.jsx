@@ -18,7 +18,11 @@ export const FirstSteps = () => {
   const questionElements = questions.map((question) => (
     <div key={question.id} id={question.id}>
       <h3>{question.title}</h3>
-      {isOpen[question.id] ? <FaCaretUp /> : <FaCaretDown />}
+      {isOpen[question.id] ? (
+        <FaCaretUp id={question.id} />
+      ) : (
+        <FaCaretDown id={question.id} />
+      )}
       {isOpen[question.id] && (
         <div id={question.id}>
           <p>{question.answerIntro}</p>
@@ -37,7 +41,7 @@ export const FirstSteps = () => {
 
   const handleClick = (e) => {
     let section = e.target.parentElement.id;
-    console.log(e.target.id);
+    console.log(section);
 
     if (isOpen.hasOwnProperty(section)) {
       setIsOpen((prev) => ({

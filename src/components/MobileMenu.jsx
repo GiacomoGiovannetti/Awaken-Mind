@@ -1,13 +1,28 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import PathContext from "../context/pathContext";
 import { FaBars } from "react-icons/fa";
 
 export const MobileMenu = ({ linkPresets }) => {
   const { pathName } = useContext(PathContext);
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef();
+
+  const closeMenu = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", closeMenu);
+
+    return () => {
+      document.removeEventListener("click", closeMenu);
+    };
+  }, []);
 
   return (
-    <div className="lg:hidden relative">
+    <div className="lg:hidden relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="active:rotate-180 active:transition-transform active:duration-250"

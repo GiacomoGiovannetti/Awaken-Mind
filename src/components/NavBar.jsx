@@ -4,6 +4,7 @@ import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import PathContext from "../context/pathContext";
 import DataContext from "../context/dataContext";
+import TimerContext from "../context/timerContext";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 
@@ -15,7 +16,9 @@ export const NavBar = () => {
     <header className="h-auto flex justify-between items-center p-2 shadow-lg">
       <div
         className="flex items-center w-[95%]"
-        onClick={() => updateNav(window.location.pathname)}
+        onClick={() => {
+          updateNav(window.location.pathname);
+        }}
       >
         <NavLink to="/" className="flex items-center ">
           <img src={viteLogo} alt="logo" className=" w-10 h-10"></img>

@@ -3,7 +3,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { FaPlay, FaStop, FaPause } from "react-icons/fa6";
 import ding from "../assets/sounds/ding.mp3";
 import TimerContext from "../context/timerContext";
-import { SetDurationButtons } from "./SetDurationButtons";
+import PathContext from "../context/pathContext";
 
 export const Timer = () => {
   const {
@@ -15,6 +15,9 @@ export const Timer = () => {
     setTimer,
   } = useContext(TimerContext);
 
+  const { pathName } = useContext(PathContext);
+
+  const [timerPage, setTimerPage] = useState("");
   const [seconds, setSeconds] = useState("0" + 0);
   const [minutes, setMinutes] = useState(0);
 
@@ -31,21 +34,19 @@ export const Timer = () => {
       </div>
     );
   };
-
   //Fa partire il timer
   const startTimer = (e) => {
     if (timerValue === 0) {
       e.preventDefault;
     } else {
       setIsRunning((prev) => !prev);
+      setTimerPage(window.location.pathname);
     }
   };
 
   //ferma il timer e imposta i valori su 0
   const stopTimer = () => {
-    setIsRunning(false);
     setTimer(0);
-    new Audio(ding).play();
     console.log("triggeri");
   };
 
@@ -80,6 +81,11 @@ export const Timer = () => {
       updateTimerDisplay();
     }
 
+    if (timerPage !== pathName && isRunning) {
+      console.log("stoppatooooo");
+      stopTimer();
+    }
+
     console.log(timerValue);
 
     onTabChange();
@@ -87,7 +93,7 @@ export const Timer = () => {
     return () => {
       clearInterval(intervalRef.current);
     };
-  }, [isRunning, timerValue]);
+  }, [isRunning, timerValue, pathName]);
 
   return (
     <div className="flex flex-col items-center">
@@ -97,7 +103,10 @@ export const Timer = () => {
         duration={timerDuration}
         trailColor="#FFFF"
         colors="#A30000"
-        onComplete={stopTimer}
+        onComplete={() => {
+          stopTimer();
+          new Audio(ding).play();
+        }}
       >
         {timeElement}
       </CountdownCircleTimer>
