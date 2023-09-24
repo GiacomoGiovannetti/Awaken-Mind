@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { NavBar } from "./components/NavBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import { NavBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
+
 import { Home } from "./pages/Home";
 import { CustomMeditations } from "./pages/CustomMeditations";
 import { GuidedMeditations } from "./pages/GuidedMeditation";
 import { FirstSteps } from "./pages/FirstSteps";
+
 import { PathProvider } from "./context/pathContext";
 import { DataProvider } from "./context/dataContext";
 import { TimerProvider } from "./context/timerContext";
-import { Footer } from "./components/Footer";
 
 export default function App() {
   return (

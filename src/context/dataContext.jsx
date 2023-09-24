@@ -20,6 +20,9 @@ import BirdsSinging from "../assets/sounds/birds-singing.mp3";
 import TibetanBell from "../assets/sounds/tibetan-bowl.mp3";
 import ClockTicking from "../assets/sounds/clock.mp3";
 import MeditationMusic from "../assets/sounds/meditation-music.mp3";
+import breathMeditation from "../assets/guided-meditations/breath-meditation.mp3";
+import sleepMeditation from "../assets/guided-meditations/sleep-meditation.mp3";
+import gratitudeMeditation from "../assets/guided-meditations/gratitude-meditation.mp3";
 
 const DataContext = createContext("");
 
@@ -118,6 +121,24 @@ export const DataProvider = ({ children }) => {
     },
   ];
 
+  const meditations = [
+    {
+      title: "Breath Awareness Meditation",
+      duration: 600,
+      src: breathMeditation,
+    },
+    {
+      title: "Sleep Meditation",
+      duration: 600,
+      src: sleepMeditation,
+    },
+    {
+      title: "Gratitude Meditation",
+      duration: 600,
+      src: gratitudeMeditation,
+    },
+  ];
+
   const questions = [
     {
       id: "whatIs",
@@ -143,13 +164,14 @@ export const DataProvider = ({ children }) => {
     {
       id: "gettingStarted",
       title: "how to get started with meditation",
-      answerIntro: `Getting started is actually pretty easy, here's the steps to start your meditation journey: 
-      Choose a comfortable and quiet place; 
-      sit or lie down in a comfortable position, for example sit on a chair with your back straight or if u prefer you can lie in your bed but be careful to not fall asleeep;
-      Set a timer for your desired meditation duration, 5/10 minutes is a suggested duration for beginners;
-      Focus on your breath and its natural rhythm, you can focus on the sensation at your nostrils, chest of belly;
-      Be mindful of your thoughts or sensations acknowledge them and the fact that you got distracted and kindly return your focus to your breath.`,
-      bulletList: ["", "", "", "", ""],
+      answerIntro: `Getting started is actually pretty easy, here's the steps to start your meditation journey: `,
+      bulletList: [
+        "Choose a comfortable and quiet place;",
+        "sit or lie down in a comfortable position, for example sit on a chair with your back straight or if u prefer you can lie in your bed but be careful to not fall asleeep;",
+        " Set a timer for your desired meditation duration, 5/10 minutes is a suggested duration for beginners;",
+        "Focus on your breath and its natural rhythm, you can focus on the sensation at your nostrils, chest of belly;",
+        "Be mindful of your thoughts or sensations acknowledge them and the fact that you got distracted and kindly return your focus to your breath.",
+      ],
     },
     {
       id: "types",
@@ -184,7 +206,13 @@ export const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ navLinksPresets, timePresets, soundtracks, questions }}
+      value={{
+        navLinksPresets,
+        timePresets,
+        soundtracks,
+        meditations,
+        questions,
+      }}
     >
       {children}
     </DataContext.Provider>

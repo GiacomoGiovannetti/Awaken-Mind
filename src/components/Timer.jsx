@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { FaPlay, FaStop, FaPause } from "react-icons/fa6";
+
 import ding from "../assets/sounds/ding.mp3";
+
 import TimerContext from "../context/timerContext";
 import PathContext from "../context/pathContext";
 
@@ -85,8 +87,6 @@ export const Timer = () => {
       console.log("stoppatooooo");
       stopTimer();
     }
-
-    console.log(timerValue);
 
     onTabChange();
 
