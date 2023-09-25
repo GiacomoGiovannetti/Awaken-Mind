@@ -14,6 +14,7 @@ export const Timer = () => {
     isRunning,
     setTimerValue,
     setIsRunning,
+    setAlertIsVisible,
     setTimer,
   } = useContext(TimerContext);
 
@@ -38,8 +39,8 @@ export const Timer = () => {
   };
   //Fa partire il timer
   const startTimer = (e) => {
-    if (timerValue === 0) {
-      e.preventDefault;
+    if (timerDuration === 0 && timerValue === 0) {
+      setAlertIsVisible(true);
     } else {
       setIsRunning((prev) => !prev);
       setTimerPage(window.location.pathname);

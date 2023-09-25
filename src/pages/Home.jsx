@@ -9,8 +9,10 @@ export const Home = () => {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <h1 className="mt-5 text-4xl font-semibold ">Nome App</h1>
-      <h3 className="mt-2 text-xl">Slogan</h3>
+      <h1 className="mt-5 text-4xl font-semibold ">Awaken Mind</h1>
+      <h3 className="mt-2 text-xl">
+        Tame your mind and taste the joy of liberation{" "}
+      </h3>
       <div className="flex flex-col items-center mt-5">
         <div
           className="flex flex-col items-center"

@@ -4,6 +4,7 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 import { Soundtracks } from "../components/Soundtracks";
 import { Timer } from "../components/Timer";
 import { AudioManager } from "../components/AudioManager";
+import { Alert } from "../components/Alert";
 
 import TimerContext from "../context/timerContext";
 import DataContext from "../context/dataContext";
@@ -69,6 +70,7 @@ export const GuidedMeditations = () => {
 
   return (
     <div className="flex flex-col items-center">
+      <Alert />
       <div
         className="select-meditation-dropdown flex flex-row items-center relative"
         onClick={showMenu}

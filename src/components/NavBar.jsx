@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import viteLogo from "/vite.svg";
+import logo from "/logo.svg";
 import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import PathContext from "../context/pathContext";
@@ -21,8 +21,8 @@ export const NavBar = () => {
         }}
       >
         <NavLink to="/" className="flex items-center ">
-          <img src={viteLogo} alt="logo" className=" w-10 h-10"></img>
-          <h3 className="text-xl font-semibold ">Nome App</h3>
+          <img src={logo} alt="logo" className=" w-10 h-10"></img>
+          <h3 className="text-xl font-semibold ">Awaken Mind</h3>
         </NavLink>
         {pathName != "/" && (
           <nav className="ml-auto">

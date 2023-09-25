@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Mooli: ["Mooli", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
