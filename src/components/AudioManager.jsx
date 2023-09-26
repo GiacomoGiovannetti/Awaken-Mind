@@ -49,16 +49,23 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
     <>
       <audio ref={soundtrackRef} src={audio} loop></audio>
       <div
-        className="flex flex-row items-center mb-3"
+        className={`flex ${
+          componentFor === "soundtrack" ? "flex-row" : "flex-col"
+        } items-center mb-3`}
         onMouseOver={showVolumeBar}
         onMouseOut={showVolumeBar}
       >
-        <h3 className="flex flex-row items-center text-lg">
+        <h3 className={`flex flex-row items-center text-lg`}>
           {componentVolumeName} Volume {showVolumeIcon}
         </h3>
         {showVolume && (
           <input
-            className="ml-2 w-[42%] h-2 outline-none appearance-none rounded-2xl bg-slate-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:bg-slate-800 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full"
+            className={`ml-2 w-[42%] h-2 outline-none appearance-none rounded-2xl bg-slate-500 
+            [&::-webkit-slider-thumb]:appearance-none 
+            [&::-webkit-slider-thumb]:bg-slate-800 
+            [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 
+            [&::-webkit-slider-thumb]:rounded-full
+            ${componentFor !== "soundtrack" && "mt-2"}`}
             type="range"
             min={0}
             max={1}

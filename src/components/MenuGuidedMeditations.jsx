@@ -34,12 +34,12 @@ export const MenuGuidedMeditations = () => {
   //funzione per creare gli elementi del menu
   const meditationsElements = meditations.map((meditation) => (
     <div
-      className="flex flex-row items-center"
+      className="grid grid-cols-4 items-center font-semibold mobile-menu mx-3 my-4"
       key={meditation.title}
       onClick={(e) => selectMeditation(e, meditation.src)}
     >
-      <h3>{meditation.title}</h3>
-      <p>{meditation.duration / 60} Min.</p>
+      <h3 className="col-span-3 ">{meditation.title}</h3>
+      <p className="justify-self-end">{meditation.duration / 60} Min.</p>
     </div>
   ));
 
@@ -70,29 +70,35 @@ export const MenuGuidedMeditations = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full flex flex-col items-center">
       <div
-        className="select-meditation-dropdown flex flex-row items-center relative"
+        className="select-meditation-dropdown flex flex-row items-center justify-center relative w-full mt-4 mb-2"
         onClick={showMenu}
         ref={dropdownRef}
       >
-        <h1>
+        <h1 className="text-2xl font-bold ">
           {selectedMeditation.title === ""
             ? "Select guided Meditation"
             : selectedMeditation.title}
         </h1>
-        {isOpen ? <FaCaretUp /> : <FaCaretDown />}
+        {isOpen ? (
+          <FaCaretUp className="text-2xl" />
+        ) : (
+          <FaCaretDown className="text-2xl" />
+        )}
         {isOpen && (
-          <div className="menu absolute top-8 right-0 z-10 w-48 bg-amber-400 rounded-xl">
+          <div className="menu absolute top-14 left-[12%] right-[12%] z-10 w-[75%] py-2 bg-amber-400/80 rounded-xl">
             {meditationsElements}
           </div>
         )}
       </div>
-      <AudioManager
-        audio={selectedMeditation.src}
-        isPlaying={isRunning}
-        componentFor={"meditation"}
-      />
+      <div className="hover:self-start hover:w-full transition-all duration-100">
+        <AudioManager
+          audio={selectedMeditation.src}
+          isPlaying={isRunning}
+          componentFor={"meditation"}
+        />
+      </div>
     </div>
   );
 };

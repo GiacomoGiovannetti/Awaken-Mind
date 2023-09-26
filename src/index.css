@@ -21,6 +21,7 @@
     @apply mx-2;
     @apply px-2;
     @apply hover:scale-105;
+    @apply active:text-slate-700;
   }
 
   .desktop-menu {
@@ -41,7 +42,7 @@
     @apply after:ease-out;
     @apply hover:after:scale-x-100;
     @apply hover:after:origin-bottom-left;
-    @apply active:text-slate-400;
+    @apply active:text-slate-700;
   }
 
   .buttons-meditation {

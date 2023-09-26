@@ -19,20 +19,26 @@ export const FirstSteps = () => {
 
   //funzione per generare le card con le domande che al click mostrano la risposta
   const questionElements = questions.map((question) => (
-    <div key={question.id}>
-      <div className="flex flex-row items-center" id={question.id}>
-        <h3>{question.title}</h3>
+    <div
+      key={question.id}
+      className="mt-8 mb-3 mx-3 border-b-2 border-slate-800/75"
+    >
+      <div
+        className="flex flex-row items-center justify-start"
+        id={question.id}
+      >
+        <h3 className=" text-xl">{question.title}</h3>
         {isOpen[question.id] ? (
-          <FaCaretUp id={question.id} />
+          <FaCaretUp id={question.id} className="ml-auto" />
         ) : (
-          <FaCaretDown id={question.id} />
+          <FaCaretDown id={question.id} className="ml-auto" />
         )}
       </div>
       {isOpen[question.id] && (
-        <div id={question.id}>
+        <div id={question.id} className="p-2 text-lg my-2">
           <p>{question.answerIntro}</p>
           {question.bulletList && (
-            <ul id={question.id}>
+            <ul id={question.id} className="list-inside list-disc">
               {question.bulletList.map((bulletPoint) => (
                 <li key={nanoid()}>{bulletPoint}</li>
               ))}
@@ -48,16 +54,33 @@ export const FirstSteps = () => {
   const showAnswer = (e) => {
     let section =
       e.target.tagName === "DIV" ? e.target.id : e.target.parentElement.id;
-    console.log(e.target.tagName, section);
-    if (e.target.tagName !== "P" && e.target.tagName !== "LI") {
+    console.log(e.target.tagName, section, isOpen);
+    //la condizione controlla che prevOpen non sia vuota oppure uguale a section
+    //e fa in modo che se avviene un clicci nella risposta uesta non venga chiusa
+    if (
+      e.target.tagName !== "P" &&
+      e.target.tagName !== "LI" &&
+      prevOpen != "" &&
+      prevOpen !== section
+    ) {
       setIsOpen((prev) => ({
         ...prev,
         [section]: !prev[section],
-        [prevOpen]: !prev[prevOpen],
+        [prevOpen]: false,
+      }));
+      setPrevOpen(section);
+    } else {
+      setIsOpen((prev) => ({
+        ...prev,
+        [section]: !prev[section],
       }));
       setPrevOpen(section);
     }
   };
 
-  return <div onClick={showAnswer}>{questionElements}</div>;
+  return (
+    <div className="h-auto " onClick={showAnswer}>
+      {questionElements}
+    </div>
+  );
 };
