@@ -5,7 +5,6 @@ import { AudioManager } from "./AudioManager";
 export const Soundtracks = () => {
   const { soundtracks } = useContext(DataContext);
 
-  //state soundtracks
   const [soundtrack, setSoundtrack] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
 

@@ -6,6 +6,7 @@ export const Alert = () => {
   const { pathName } = useContext(PathContext);
   const { alertIsVisible, setAlertIsVisible } = useContext(TimerContext);
 
+  //per nascondere l'alert
   const hideAlert = (e) => {
     setAlertIsVisible(false);
   };

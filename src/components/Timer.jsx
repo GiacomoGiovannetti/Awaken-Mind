@@ -37,7 +37,8 @@ export const Timer = () => {
       </div>
     );
   };
-  //Fa partire il timer
+
+  //Fa partire il timer e controlla che la durata sia diversa da 0
   const startTimer = (e) => {
     if (timerDuration === 0 && timerValue === 0) {
       setAlertIsVisible(true);

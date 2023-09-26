@@ -4,7 +4,6 @@ import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import PathContext from "../context/pathContext";
 import DataContext from "../context/dataContext";
-import TimerContext from "../context/timerContext";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 

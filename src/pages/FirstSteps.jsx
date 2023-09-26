@@ -7,7 +7,6 @@ import DataContext from "../context/dataContext";
 export const FirstSteps = () => {
   const { questions } = useContext(DataContext);
 
-  // state per mostrare/nascondere la risposta della domanda
   const [isOpen, setIsOpen] = useState({
     whatIs: false,
     benefits: false,
@@ -15,8 +14,10 @@ export const FirstSteps = () => {
     types: false,
     wanderingMind: false,
   });
+
   const [prevOpen, setPrevOpen] = useState("");
 
+  //funzione per generare le card con le domande che al click mostrano la risposta
   const questionElements = questions.map((question) => (
     <div key={question.id}>
       <div className="flex flex-row items-center" id={question.id}>
@@ -43,7 +44,8 @@ export const FirstSteps = () => {
     </div>
   ));
 
-  const handleClick = (e) => {
+  //funzione per mostrare la risposta e nascondere quella della domanda precedente
+  const showAnswer = (e) => {
     let section =
       e.target.tagName === "DIV" ? e.target.id : e.target.parentElement.id;
     console.log(e.target.tagName, section);
@@ -57,5 +59,5 @@ export const FirstSteps = () => {
     }
   };
 
-  return <div onClick={handleClick}>{questionElements}</div>;
+  return <div onClick={showAnswer}>{questionElements}</div>;
 };

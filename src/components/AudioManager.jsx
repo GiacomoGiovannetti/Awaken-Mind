@@ -14,9 +14,11 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
     setSoundtrackVolume(volume);
   };
 
+  //verifica il component in cui si trova in modo da mostrare il testo corretto
   const componentVolumeName =
     componentFor === "soundtrack" ? "Soundtrack" : "Meditation";
 
+  //in base al valore del volume mostra un icona diversa
   const showVolumeIcon =
     soundtrackVolume >= 0.5 ? (
       <FaVolumeHigh />
@@ -26,6 +28,7 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
       <FaVolumeXmark />
     );
 
+  //per mostrare la barra volume
   const showVolumeBar = (e) => {
     e.stopPropagation();
     setShowVolume((prev) => !prev);
