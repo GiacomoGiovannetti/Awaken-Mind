@@ -43,4 +43,25 @@
     @apply hover:after:origin-bottom-left;
     @apply active:text-slate-400;
   }
+
+  .buttons-meditation {
+    @apply border-2;
+    @apply border-b-4;
+    @apply border-slate-800;
+    @apply px-2;
+    @apply py-1;
+    @apply rounded-lg;
+    @apply hover:scale-105;
+    @apply transition-transform;
+    @apply duration-300;
+    @apply ease-in;
+    @apply active:text-slate-700;
+    @apply active:border-slate-700;
+  }
+}
+
+@layer utilities {
+  .autofill-bg-color {
+    @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(250,204,21)];
+  }
 }

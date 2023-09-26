@@ -27,12 +27,12 @@ export const Timer = () => {
   //Display durata meditazione dentro al cerchio
   const timeElement = ({ remainingTime }) => {
     return (
-      <div>
+      <div className="flex flex-row text-4xl font-semibold">
         <span>
           <h3>{minutes} :</h3>
         </span>
         <span>
-          <h3>{seconds}</h3>
+          <h3 className="ml-2">{seconds}</h3>
         </span>
       </div>
     );
@@ -98,13 +98,15 @@ export const Timer = () => {
   }, [isRunning, timerValue, pathName]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-6">
       <CountdownCircleTimer
         key={timerDuration}
         isPlaying={isRunning ? true : false}
         duration={timerDuration}
-        trailColor="#FFFF"
-        colors="#A30000"
+        trailColor="#f59e0b"
+        colors="#0f172a"
+        size="240"
+        strokeWidth="16"
         onComplete={() => {
           stopTimer();
           new Audio(ding).play();
@@ -112,20 +114,26 @@ export const Timer = () => {
       >
         {timeElement}
       </CountdownCircleTimer>
-      <div className="stop-play flex flex-row">
-        <button className="flex flex-row items-center" onClick={startTimer}>
+      <div className="flex flex-row my-4 text-lg">
+        <button
+          className="flex flex-row  items-center mr-4 buttons-meditation"
+          onClick={startTimer}
+        >
           {isRunning ? (
             <>
-              Pause <FaPause />
+              Pause <FaPause className="ml-2" />
             </>
           ) : (
             <>
-              Play <FaPlay />
+              Play <FaPlay className="ml-2" />
             </>
           )}
         </button>
-        <button className="flex flex-row items-center" onClick={stopTimer}>
-          Stop <FaStop />
+        <button
+          className="flex flex-row items-center buttons-meditation"
+          onClick={stopTimer}
+        >
+          Stop <FaStop className="ml-2" />
         </button>
       </div>
     </div>

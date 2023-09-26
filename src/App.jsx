@@ -18,7 +18,7 @@ export default function App() {
     <PathProvider>
       <DataProvider>
         <Router>
-          <main className="flex flex-col font-Mooli h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 ">
+          <main className="flex flex-col font-Mooli h-full text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 ">
             <NavBar />
             <TimerProvider>
               <Routes>

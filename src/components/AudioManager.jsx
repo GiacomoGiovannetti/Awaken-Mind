@@ -21,11 +21,11 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
   //in base al valore del volume mostra un icona diversa
   const showVolumeIcon =
     soundtrackVolume >= 0.5 ? (
-      <FaVolumeHigh />
+      <FaVolumeHigh className="ml-1 text-xl" />
     ) : soundtrackVolume < 0.5 && soundtrackVolume > 0 ? (
-      <FaVolumeLow />
+      <FaVolumeLow className="ml-1 text-xl" />
     ) : (
-      <FaVolumeXmark />
+      <FaVolumeXmark className="ml-1 text-xl" />
     );
 
   //per mostrare la barra volume
@@ -48,12 +48,17 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
   return (
     <>
       <audio ref={soundtrackRef} src={audio} loop></audio>
-      <div onMouseOver={showVolumeBar} onMouseOut={showVolumeBar}>
-        <h3>
+      <div
+        className="flex flex-row items-center mb-3"
+        onMouseOver={showVolumeBar}
+        onMouseOut={showVolumeBar}
+      >
+        <h3 className="flex flex-row items-center text-lg">
           {componentVolumeName} Volume {showVolumeIcon}
         </h3>
         {showVolume && (
           <input
+            className="ml-2 w-[42%] h-2 outline-none appearance-none rounded-2xl bg-slate-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:bg-slate-800 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full"
             type="range"
             min={0}
             max={1}

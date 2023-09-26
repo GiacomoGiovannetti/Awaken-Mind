@@ -82,42 +82,42 @@ export const DataProvider = ({ children }) => {
     {
       id: "Fireplace",
       src: Fire,
-      icon: <FaFire />,
+      icon: <FaFire className="text-2xl" />,
     },
     {
       id: "Waves",
       src: OceanWaves,
-      icon: <FaWater />,
+      icon: <FaWater className="text-2xl" />,
     },
     {
       id: "Rain",
       src: Rain,
-      icon: <FaCloudRain />,
+      icon: <FaCloudRain className="text-2xl" />,
     },
     {
       id: "Waterfall",
       src: Waterfall,
-      icon: <FaDroplet />,
+      icon: <FaDroplet className="text-2xl" />,
     },
     {
       id: "Birds Singing",
       src: BirdsSinging,
-      icon: <FaDove />,
+      icon: <FaDove className="text-2xl" />,
     },
     {
       id: "Tibetan Bell",
       src: TibetanBell,
-      icon: <FaBell />,
+      icon: <FaBell className="text-2xl" />,
     },
     {
       id: "Clock Ticking",
       src: ClockTicking,
-      icon: <FaClock />,
+      icon: <FaClock className="text-2xl" />,
     },
     {
       id: "Meditation Music",
       src: MeditationMusic,
-      icon: <FaMusic />,
+      icon: <FaMusic className="text-2xl" />,
     },
   ];
 
