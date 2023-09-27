@@ -51,7 +51,6 @@ export const Timer = ({ darkMode }) => {
   //ferma il timer e imposta i valori su 0
   const stopTimer = () => {
     setTimer(0);
-    console.log("triggeri");
   };
 
   //aggiornare i valori di minutes e seconds
@@ -75,18 +74,15 @@ export const Timer = ({ darkMode }) => {
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
-        console.log("intervallo attivo: ", isRunning);
         setTimerValue((prevDuration) => prevDuration - 1);
         updateTimerDisplay();
       }, 1000);
     } else if (!isRunning) {
       clearInterval(intervalRef.current);
-      console.log("intervallo disattivato : ", isRunning, timerDuration);
       updateTimerDisplay();
     }
 
     if (timerPage !== pathName && isRunning) {
-      console.log("stoppatooooo");
       stopTimer();
     }
 

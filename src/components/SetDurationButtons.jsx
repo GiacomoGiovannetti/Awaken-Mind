@@ -14,7 +14,6 @@ export const SetDurationButtons = () => {
     if (reg.test(value) || value === "") {
       let intValue = parseInt(value);
       setCustomDuration(value);
-      console.log("sono solo numeri", intValue);
     }
   };
 
@@ -24,7 +23,6 @@ export const SetDurationButtons = () => {
     e.preventDefault();
     if (customDuration != "") {
       setTimer(customDuration * 60);
-      console.log("invio");
     }
   };
 

@@ -63,14 +63,17 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
         {showVolume && (
           <input
             className={`ml-2 w-[42%] h-2 outline-none appearance-none rounded-2xl bg-slate-500 
-            [&::-webkit-slider-thumb]:appearance-none 
+            ${componentFor !== "soundtrack" && "mt-2"}    
+            [&::-webkit-slider-thumb]:appearance-none
             [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-webkit-slider-thumb]:bg-slate-800 
-            [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 
+            [&::-webkit-slider-thumb]:bg-slate-800
+            [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4
             [&::-webkit-slider-thumb]:rounded-full
-            ${componentFor !== "soundtrack" && "mt-2"}
+            hover:[&::-webkit-slider-thumb]:bg-slate-900
             dark:bg-slate-400
-            dark:[&::-webkit-slider-thumb]:bg-amber-600`}
+            dark:[&::-webkit-slider-thumb]:bg-amber-600
+            dark:hover:[&::-webkit-slider-thumb]:bg-amber-700
+            `}
             type="range"
             min={0}
             max={1}
