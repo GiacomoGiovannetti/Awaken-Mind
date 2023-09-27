@@ -27,7 +27,7 @@ export const Timer = () => {
   //Display durata meditazione dentro al cerchio
   const timeElement = ({ remainingTime }) => {
     return (
-      <div className="flex flex-row text-4xl font-semibold md:text-6xl">
+      <div className="flex flex-row text-4xl font-semibold md:text-5xl">
         <span>
           <h3>{minutes} :</h3>
         </span>
@@ -98,15 +98,15 @@ export const Timer = () => {
   }, [isRunning, timerValue, pathName]);
 
   return (
-    <div className="flex flex-col items-center mt-6 md:mt-12">
+    <div className="flex flex-col items-center mt-6 md:mt-8">
       <CountdownCircleTimer
         key={timerDuration}
         isPlaying={isRunning ? true : false}
         duration={timerDuration}
         trailColor="#f59e0b"
         colors="#0f172a"
-        size={`${window.innerWidth >= 768 ? 400 : 240}`}
-        strokeWidth={`${window.innerWidth >= 768 ? 24 : 16}`}
+        size={`${window.innerWidth >= 768 ? 360 : 240}`}
+        strokeWidth={`${window.innerWidth >= 768 ? 20 : 16}`}
         onComplete={() => {
           stopTimer();
           new Audio(ding).play();
@@ -114,7 +114,7 @@ export const Timer = () => {
       >
         {timeElement}
       </CountdownCircleTimer>
-      <div className="flex flex-row my-4 text-lg md:text-2xl md:my-8">
+      <div className="flex flex-row my-4 text-lg md:text-xl md:my-6">
         <button
           className="flex flex-row  items-center mr-4 buttons-meditation md:mr-8"
           onClick={startTimer}

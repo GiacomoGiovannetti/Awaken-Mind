@@ -22,7 +22,7 @@ export const Soundtracks = () => {
           isPlaying && soundtrack === sound.src
             ? "border-x-2 border-slate-800 rounded"
             : ""
-        } md:text-2xl`}
+        } md:text-xl`}
       >
         {sound.id}
       </p>
@@ -39,7 +39,7 @@ export const Soundtracks = () => {
 
   return (
     <div className="soundtracks flex flex-col justify-center mt-6">
-      <div className="grid grid-rows-4 grid-cols-2 mb-3 md:grid-rows-2 md:grid-cols-4">
+      <div className="grid grid-rows-4 grid-cols-2 mb-3 md:grid-rows-2 md:grid-cols-4 lg:grid-rows-1 lg:grid-cols-8">
         {soundtrackItems}
       </div>
       <AudioManager

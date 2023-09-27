@@ -27,7 +27,7 @@ export const FirstSteps = () => {
         className="flex flex-row items-center justify-start"
         id={question.id}
       >
-        <h3 className=" text-xl md:text-3xl">{question.title}</h3>
+        <h3 className=" text-xl md:text-2xl">{question.title}</h3>
         {isOpen[question.id] ? (
           <FaCaretUp id={question.id} className="ml-auto" />
         ) : (
@@ -37,7 +37,7 @@ export const FirstSteps = () => {
       {isOpen[question.id] && (
         <div
           id={`${question.id} answerBody `}
-          className="px-2 py-4 text-lg md:text-2xl"
+          className="px-2 py-4 text-lg md:text-xl"
         >
           <p>{question.answerIntro}</p>
           {question.bulletList && (
@@ -60,16 +60,10 @@ export const FirstSteps = () => {
   const showAnswer = (e) => {
     let section =
       e.target.tagName === "DIV" ? e.target.id : e.target.parentElement.id;
-    console.log(
-      e.target.tagName,
-      e.target.parentElement.id,
-      `section : ${section}`
-    );
     //la condizione controlla che prevOpen non sia vuota oppure uguale a section
     //e fa in modo che se avviene un clicci nella risposta uesta non venga chiusa
     if (!section.includes("answerBody")) {
       if (prevOpen != "" && prevOpen !== section) {
-        console.log("ugabuga");
         setIsOpen((prev) => ({
           ...prev,
           [section]: !prev[section],
@@ -77,7 +71,6 @@ export const FirstSteps = () => {
         }));
         setPrevOpen(section);
       } else {
-        console.log("blebla");
         setIsOpen((prev) => ({
           ...prev,
           [section]: !prev[section],

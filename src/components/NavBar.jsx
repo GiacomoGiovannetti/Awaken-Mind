@@ -23,9 +23,9 @@ export const NavBar = () => {
           <img
             src={logo}
             alt="logo"
-            className=" w-10 h-10 md:w-16 md:h-16"
+            className=" w-10 h-10 md:w-14 md:h-14"
           ></img>
-          <h3 className="text-xl font-semibold md:text-3xl">Awaken Mind</h3>
+          <h3 className="text-xl font-semibold md:text-2xl">Awaken Mind</h3>
         </NavLink>
         {pathName != "/" && (
           <nav className="ml-auto">
@@ -35,7 +35,7 @@ export const NavBar = () => {
         )}
       </div>
       <button>
-        <FaRegLightbulb className="h-8 mb-2 ml-2 md:text-2xl" />
+        <FaRegLightbulb className="h-8 mb-2 ml-2 md:text-xl" />
       </button>
     </header>
   );

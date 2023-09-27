@@ -32,7 +32,7 @@ export const SetDurationButtons = () => {
   const timePresetsElements = timePresets.map((preset) => {
     return (
       <button
-        className="text-lg buttons-meditation md:text-2xl"
+        className="text-lg buttons-meditation md:text-xl"
         value={preset.value}
         key={preset.id}
         onClick={() => setTimer(preset.value)}
@@ -49,7 +49,7 @@ export const SetDurationButtons = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex justify-center items-center text-lg mx-2 md:text-3xl"
+        className="flex justify-center items-center text-lg mx-2 md:text-2xl"
       >
         <label className="mr-1 md:mr-4" htmlFor="duration-amount">
           Minutes:{" "}

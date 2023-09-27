@@ -82,42 +82,42 @@ export const DataProvider = ({ children }) => {
     {
       id: "Fireplace",
       src: Fire,
-      icon: <FaFire className="text-2xl md:text-4xl" />,
+      icon: <FaFire className="text-2xl md:text-3xl" />,
     },
     {
       id: "Waves",
       src: OceanWaves,
-      icon: <FaWater className="text-2xl md:text-4xl" />,
+      icon: <FaWater className="text-2xl md:text-3xl" />,
     },
     {
       id: "Rain",
       src: Rain,
-      icon: <FaCloudRain className="text-2xl md:text-4xl" />,
+      icon: <FaCloudRain className="text-2xl md:text-3xl" />,
     },
     {
       id: "Waterfall",
       src: Waterfall,
-      icon: <FaDroplet className="text-2xl md:text-4xl" />,
+      icon: <FaDroplet className="text-2xl md:text-3xl" />,
     },
     {
       id: "Birds Singing",
       src: BirdsSinging,
-      icon: <FaDove className="text-2xl md:text-4xl" />,
+      icon: <FaDove className="text-2xl md:text-3xl" />,
     },
     {
       id: "Tibetan Bell",
       src: TibetanBell,
-      icon: <FaBell className="text-2xl md:text-4xl" />,
+      icon: <FaBell className="text-2xl md:text-3xl" />,
     },
     {
       id: "Clock Ticking",
       src: ClockTicking,
-      icon: <FaClock className="text-2xl md:text-4xl" />,
+      icon: <FaClock className="text-2xl md:text-3xl" />,
     },
     {
       id: "Meditation Music",
       src: MeditationMusic,
-      icon: <FaMusic className="text-2xl md:text-4xl" />,
+      icon: <FaMusic className="text-2xl md:text-3xl" />,
     },
   ];
 

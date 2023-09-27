@@ -15,7 +15,7 @@ export const Home = () => {
       <h3 className="mt-2 mx-2 text-xl text-center md:text-3xl md:mt-4">
         Tame your mind and taste the joy of liberation
       </h3>
-      <div className="flex flex-col items-center mt-5 md:mt-10">
+      <div className="flex flex-col items-center w-full mt-5 md:mt-10 lg:flex-row lg:justify-evenly ">
         <div
           className="flex flex-col items-center"
           onClick={() => {

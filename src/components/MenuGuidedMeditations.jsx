@@ -34,7 +34,7 @@ export const MenuGuidedMeditations = () => {
   //funzione per creare gli elementi del menu
   const meditationsElements = meditations.map((meditation) => (
     <div
-      className="grid grid-cols-4 items-center font-semibold mobile-menu mx-3 my-4 md:text-2xl md:mx-6 md:my-6"
+      className="grid grid-cols-4 items-center font-semibold mobile-menu mx-3 my-4 md:text-xl md:mx-6 md:my-5"
       key={meditation.title}
       onClick={(e) => selectMeditation(e, meditation.src)}
     >
@@ -72,22 +72,22 @@ export const MenuGuidedMeditations = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <div
-        className="select-meditation-dropdown flex flex-row items-center justify-center relative w-full mt-4 mb-2 md:mt-8 md:mb-4"
+        className="select-meditation-dropdown flex flex-row items-center justify-center relative w-full mt-4 mb-2 md:mt-6 md:mb-4"
         onClick={showMenu}
         ref={dropdownRef}
       >
-        <h1 className="text-2xl font-bold md:text-4xl">
+        <h1 className="text-2xl font-bold md:text-3xl">
           {selectedMeditation.title === ""
             ? "Select guided Meditation"
             : selectedMeditation.title}
         </h1>
         {isOpen ? (
-          <FaCaretUp className="text-2xl md:text-4xl" />
+          <FaCaretUp className="text-2xl md:text-3xl" />
         ) : (
-          <FaCaretDown className="text-2xl md:text-4xl" />
+          <FaCaretDown className="text-2xl md:text-3xl" />
         )}
         {isOpen && (
-          <div className="menu absolute top-14 left-[12%] right-[12%] z-10 w-[75%] py-2 bg-amber-400/80 rounded-xl md:py-4">
+          <div className="menu absolute top-14 left-[12%] right-[12%] z-10 w-[75%] py-2 bg-amber-400/80 rounded-xl md:py-3">
             {meditationsElements}
           </div>
         )}
