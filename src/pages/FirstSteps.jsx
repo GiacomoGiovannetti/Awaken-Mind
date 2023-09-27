@@ -35,10 +35,13 @@ export const FirstSteps = () => {
         )}
       </div>
       {isOpen[question.id] && (
-        <div id={question.id} className="p-2 text-lg my-2">
+        <div id={`${question.id} answerBody `} className="px-2 py-4 text-lg">
           <p>{question.answerIntro}</p>
           {question.bulletList && (
-            <ul id={question.id} className="list-inside list-disc">
+            <ul
+              id={`${question.id} answerBody`}
+              className="list-inside list-disc"
+            >
               {question.bulletList.map((bulletPoint) => (
                 <li key={nanoid()}>{bulletPoint}</li>
               ))}
@@ -54,27 +57,30 @@ export const FirstSteps = () => {
   const showAnswer = (e) => {
     let section =
       e.target.tagName === "DIV" ? e.target.id : e.target.parentElement.id;
-    console.log(e.target.tagName, section, isOpen);
+    console.log(
+      e.target.tagName,
+      e.target.parentElement.id,
+      `section : ${section}`
+    );
     //la condizione controlla che prevOpen non sia vuota oppure uguale a section
     //e fa in modo che se avviene un clicci nella risposta uesta non venga chiusa
-    if (
-      e.target.tagName !== "P" &&
-      e.target.tagName !== "LI" &&
-      prevOpen != "" &&
-      prevOpen !== section
-    ) {
-      setIsOpen((prev) => ({
-        ...prev,
-        [section]: !prev[section],
-        [prevOpen]: false,
-      }));
-      setPrevOpen(section);
-    } else {
-      setIsOpen((prev) => ({
-        ...prev,
-        [section]: !prev[section],
-      }));
-      setPrevOpen(section);
+    if (!section.includes("answerBody")) {
+      if (prevOpen != "" && prevOpen !== section) {
+        console.log("ugabuga");
+        setIsOpen((prev) => ({
+          ...prev,
+          [section]: !prev[section],
+          [prevOpen]: false,
+        }));
+        setPrevOpen(section);
+      } else {
+        console.log("blebla");
+        setIsOpen((prev) => ({
+          ...prev,
+          [section]: !prev[section],
+        }));
+        setPrevOpen(section);
+      }
     }
   };
 

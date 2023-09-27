@@ -44,13 +44,15 @@ export const SetDurationButtons = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-3 mb-3">{timePresetsElements}</div>
+      <div className="grid grid-cols-3 gap-3 mb-3 mx-2">
+        {timePresetsElements}
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="flex justify-center items-center text-lg"
+        className="flex justify-center items-center text-lg mx-2"
       >
         <label className="mr-1" htmlFor="duration-amount">
-          Minutes :{" "}
+          Minutes:{" "}
         </label>
         <input
           className="text-center bg-yellow-400 autofill-bg-color border-b-2 border-slate-800 outline-none focus:border-b-slate-600 transition-color duration-150 ease-in placeholder:text-slate-600"
