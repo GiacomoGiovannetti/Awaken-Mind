@@ -69,6 +69,7 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
             [&::-webkit-slider-thumb]:bg-slate-800
             [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4
             [&::-webkit-slider-thumb]:rounded-full
+            md:w-56
             hover:[&::-webkit-slider-thumb]:bg-slate-900
             dark:bg-slate-400
             dark:[&::-webkit-slider-thumb]:bg-amber-600
