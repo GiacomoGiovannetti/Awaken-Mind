@@ -7,7 +7,7 @@ import ding from "../assets/sounds/ding.mp3";
 import TimerContext from "../context/timerContext";
 import PathContext from "../context/pathContext";
 
-export const Timer = () => {
+export const Timer = ({ darkMode }) => {
   const {
     timerDuration,
     timerValue,
@@ -103,8 +103,8 @@ export const Timer = () => {
         key={timerDuration}
         isPlaying={isRunning ? true : false}
         duration={timerDuration}
-        trailColor="#f59e0b"
-        colors="#0f172a"
+        trailColor={`${darkMode ? "#0f172a" : "#f59e0b"}`}
+        colors={`${darkMode ? "#f59e0b" : "#0f172a"}`}
         size={`${window.innerWidth >= 768 ? 360 : 240}`}
         strokeWidth={`${window.innerWidth >= 768 ? 20 : 16}`}
         onComplete={() => {

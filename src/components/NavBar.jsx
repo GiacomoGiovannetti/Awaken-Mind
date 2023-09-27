@@ -7,9 +7,13 @@ import DataContext from "../context/dataContext";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 
-export const NavBar = () => {
+export const NavBar = ({ darkMode, setDarkMode }) => {
   const { pathName, updateNav } = useContext(PathContext);
   const { navLinksPresets } = useContext(DataContext);
+
+  const switchDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
 
   return (
     <header className="h-auto flex justify-between items-center p-2 shadow-lg">
@@ -35,7 +39,17 @@ export const NavBar = () => {
         )}
       </div>
       <button>
-        <FaRegLightbulb className="h-8 mb-2 ml-2 md:text-xl" />
+        {darkMode ? (
+          <FaRegLightbulb
+            onClick={switchDarkMode}
+            className="h-8 mb-2 ml-2 md:text-xl"
+          />
+        ) : (
+          <FaLightbulb
+            onClick={switchDarkMode}
+            className="h-8 mb-2 ml-2 md:text-xl"
+          />
+        )}
       </button>
     </header>
   );

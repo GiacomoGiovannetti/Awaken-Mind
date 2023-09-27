@@ -14,28 +14,32 @@ import { DataProvider } from "./context/dataContext";
 import { TimerProvider } from "./context/timerContext";
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <PathProvider>
       <DataProvider>
         <Router>
-          <main className="flex flex-col font-Mooli h-auto min-h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 ">
-            <NavBar />
-            <TimerProvider>
-              <Routes>
-                <Route exact path="/" element={<Home />}></Route>
-                <Route
-                  path="/custom-meditations"
-                  element={<CustomMeditations />}
-                ></Route>
-                <Route
-                  path="/guided-meditations"
-                  element={<GuidedMeditations />}
-                ></Route>
-                <Route path="/first-steps" element={<FirstSteps />}></Route>
-              </Routes>
-            </TimerProvider>
-            <Footer />
-          </main>
+          <div className={`${darkMode ? "dark" : ""}`}>
+            <main className="flex flex-col font-Mooli h-auto min-h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 dark:from-slate-900 dark:via-slate-900  dark:to-slate-800 dark:text-amber-500">
+              <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+              <TimerProvider>
+                <Routes>
+                  <Route exact path="/" element={<Home />}></Route>
+                  <Route
+                    path="/custom-meditations"
+                    element={<CustomMeditations darkMode={darkMode} />}
+                  ></Route>
+                  <Route
+                    path="/guided-meditations"
+                    element={<GuidedMeditations darkMode={darkMode} />}
+                  ></Route>
+                  <Route path="/first-steps" element={<FirstSteps />}></Route>
+                </Routes>
+              </TimerProvider>
+              <Footer />
+            </main>
+          </div>
         </Router>
       </DataProvider>
     </PathProvider>

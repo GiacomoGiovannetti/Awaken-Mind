@@ -21,6 +21,9 @@
     @apply active:border-slate-700;
     @apply md:mt-5;
     @apply md:text-2xl;
+    @apply dark:border-amber-600;
+    @apply dark:active:text-amber-400;
+    @apply dark:active:border-amber-400;
   }
 
   .mobile-menu {
@@ -31,9 +34,13 @@
     @apply px-2;
     @apply hover:scale-105;
     @apply active:text-slate-700;
+    @apply active:border-slate-700;
     @apply md:my-4;
     @apply md:mx-4;
     @apply md:px-4;
+    @apply dark:border-amber-600;
+    @apply dark:active:text-amber-400;
+    @apply dark:active:border-amber-400;
   }
 
   .desktop-menu {
@@ -43,7 +50,7 @@
     @apply after:absolute;
     @apply after:w-full;
     @apply after:scale-x-0;
-    @apply after:h-[0.10rem];
+    @apply after:h-[0.2rem];
     @apply after:top-7;
     @apply after:left-0;
     @apply after:bg-slate-900;
@@ -55,6 +62,9 @@
     @apply hover:after:scale-x-100;
     @apply hover:after:origin-bottom-left;
     @apply active:text-slate-700;
+    @apply dark:after:bg-amber-600;
+    @apply dark:after:active:bg-amber-400;
+    @apply dark:active:text-amber-400;
   }
 
   .buttons-meditation {
@@ -72,11 +82,15 @@
     @apply active:border-slate-700;
     @apply md:px-4;
     @apply md:py-2;
+    @apply dark:border-amber-600;
+    @apply dark:active:text-amber-400;
+    @apply dark:active:border-amber-400;
   }
 }
 
 @layer utilities {
   .autofill-bg-color {
     @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(250,204,21)];
+    @apply dark:autofill:shadow-[inset_0_0_0px_1000px_rgb(15,23,42)];
   }
 }

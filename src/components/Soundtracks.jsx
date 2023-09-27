@@ -12,15 +12,15 @@ export const Soundtracks = () => {
   const soundtrackItems = soundtracks.map((sound) => (
     <div key={sound.id} className="flex flex-col items-center m-2 ">
       <button
-        className="border-2 rounded-full p-3 border-slate-800 mb-1 hover:bg-slate-800 hover:text-amber-500 transition-colors duration-250 ease-in md:p-5"
+        className="border-2 rounded-full p-3 border-slate-800 mb-1 hover:bg-slate-800 hover:text-amber-500 transition-colors duration-250 ease-in md:p-5 dark:border-amber-600 dark:hover:text-slate-800 dark:hover:bg-amber-500"
         onClick={() => playSoundtrack(sound.src)}
       >
         {sound.icon}
       </button>
       <p
-        className={`text-lg font-semibold px-1 text-center${
+        className={`text-lg font-semibold px-1 text-center cursor-default ${
           isPlaying && soundtrack === sound.src
-            ? "border-x-2 border-slate-800 rounded"
+            ? "border-x-2 border-slate-800 rounded dark:border-amber-600"
             : ""
         } md:text-xl`}
       >

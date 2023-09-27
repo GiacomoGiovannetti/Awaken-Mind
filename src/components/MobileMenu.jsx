@@ -31,7 +31,7 @@ export const MobileMenu = ({ linkPresets }) => {
         <FaBars className="text-xl md:text-3xl" />
       </button>
       {isOpen && (
-        <div className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 md:text-2xl">
+        <div className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 md:text-2xl dark:bg-slate-800/75">
           {pathName === "/custom-meditations"
             ? linkPresets.customMed
             : pathName === "/guided-meditations"

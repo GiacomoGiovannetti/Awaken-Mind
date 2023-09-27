@@ -55,7 +55,7 @@ export const SetDurationButtons = () => {
           Minutes:{" "}
         </label>
         <input
-          className="text-center bg-yellow-400 autofill-bg-color border-b-2 border-slate-800 outline-none focus:border-b-slate-600 transition-color duration-150 ease-in placeholder:text-slate-600"
+          className="text-center bg-yellow-400 autofill-bg-color border-b-2 border-slate-800 outline-none focus:border-b-slate-600 transition-color duration-150 ease-in placeholder:text-slate-600 dark:bg-slate-900 dark:text-amber-500 dark:border-amber-600 dark:focus:border-amber-400 dark:placeholder:text-amber-400/50"
           type="text"
           name="duration-amount"
           id="duration-amount"

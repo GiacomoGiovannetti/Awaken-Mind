@@ -21,10 +21,10 @@ export const FirstSteps = () => {
   const questionElements = questions.map((question) => (
     <div
       key={question.id}
-      className="mt-8 mb-3 mx-3 border-b-2 border-slate-800/75"
+      className="mt-8 mb-3 mx-3 border-b-2 border-slate-800/75 dark:border-amber-600/75"
     >
       <div
-        className="flex flex-row items-center justify-start"
+        className="flex flex-row items-center justify-start cursor-pointer"
         id={question.id}
       >
         <h3 className=" text-xl md:text-2xl">{question.title}</h3>
