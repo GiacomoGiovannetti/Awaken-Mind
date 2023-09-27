@@ -27,7 +27,7 @@ export const FirstSteps = () => {
         className="flex flex-row items-center justify-start"
         id={question.id}
       >
-        <h3 className=" text-xl">{question.title}</h3>
+        <h3 className=" text-xl md:text-3xl">{question.title}</h3>
         {isOpen[question.id] ? (
           <FaCaretUp id={question.id} className="ml-auto" />
         ) : (
@@ -35,7 +35,10 @@ export const FirstSteps = () => {
         )}
       </div>
       {isOpen[question.id] && (
-        <div id={`${question.id} answerBody `} className="px-2 py-4 text-lg">
+        <div
+          id={`${question.id} answerBody `}
+          className="px-2 py-4 text-lg md:text-2xl"
+        >
           <p>{question.answerIntro}</p>
           {question.bulletList && (
             <ul

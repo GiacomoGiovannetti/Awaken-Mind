@@ -27,7 +27,7 @@ export const Timer = () => {
   //Display durata meditazione dentro al cerchio
   const timeElement = ({ remainingTime }) => {
     return (
-      <div className="flex flex-row text-4xl font-semibold">
+      <div className="flex flex-row text-4xl font-semibold md:text-6xl">
         <span>
           <h3>{minutes} :</h3>
         </span>
@@ -98,15 +98,15 @@ export const Timer = () => {
   }, [isRunning, timerValue, pathName]);
 
   return (
-    <div className="flex flex-col items-center mt-6">
+    <div className="flex flex-col items-center mt-6 md:mt-12">
       <CountdownCircleTimer
         key={timerDuration}
         isPlaying={isRunning ? true : false}
         duration={timerDuration}
         trailColor="#f59e0b"
         colors="#0f172a"
-        size="240"
-        strokeWidth="16"
+        size={`${window.innerWidth >= 768 ? 400 : 240}`}
+        strokeWidth={`${window.innerWidth >= 768 ? 24 : 16}`}
         onComplete={() => {
           stopTimer();
           new Audio(ding).play();
@@ -114,18 +114,18 @@ export const Timer = () => {
       >
         {timeElement}
       </CountdownCircleTimer>
-      <div className="flex flex-row my-4 text-lg">
+      <div className="flex flex-row my-4 text-lg md:text-2xl md:my-8">
         <button
-          className="flex flex-row  items-center mr-4 buttons-meditation"
+          className="flex flex-row  items-center mr-4 buttons-meditation md:mr-8"
           onClick={startTimer}
         >
           {isRunning ? (
             <>
-              Pause <FaPause className="ml-2" />
+              Pause <FaPause className="ml-2 md:ml-4" />
             </>
           ) : (
             <>
-              Play <FaPlay className="ml-2" />
+              Play <FaPlay className="ml-2 md:ml-4" />
             </>
           )}
         </button>
@@ -133,7 +133,7 @@ export const Timer = () => {
           className="flex flex-row items-center buttons-meditation"
           onClick={stopTimer}
         >
-          Stop <FaStop className="ml-2" />
+          Stop <FaStop className="ml-2 md:ml-4" />
         </button>
       </div>
     </div>

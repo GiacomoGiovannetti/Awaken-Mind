@@ -28,10 +28,10 @@ export const MobileMenu = ({ linkPresets }) => {
         onClick={() => setIsOpen((prev) => !prev)}
         className="active:rotate-180 active:transition-transform active:duration-250"
       >
-        <FaBars className="text-xl" />
+        <FaBars className="text-xl md:text-3xl" />
       </button>
       {isOpen && (
-        <div className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 ">
+        <div className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 md:text-2xl">
           {pathName === "/custom-meditations"
             ? linkPresets.customMed
             : pathName === "/guided-meditations"

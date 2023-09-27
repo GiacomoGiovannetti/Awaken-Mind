@@ -20,8 +20,12 @@ export const NavBar = () => {
         }}
       >
         <NavLink to="/" className="flex items-center ">
-          <img src={logo} alt="logo" className=" w-10 h-10"></img>
-          <h3 className="text-xl font-semibold ">Awaken Mind</h3>
+          <img
+            src={logo}
+            alt="logo"
+            className=" w-10 h-10 md:w-16 md:h-16"
+          ></img>
+          <h3 className="text-xl font-semibold md:text-3xl">Awaken Mind</h3>
         </NavLink>
         {pathName != "/" && (
           <nav className="ml-auto">
@@ -31,7 +35,7 @@ export const NavBar = () => {
         )}
       </div>
       <button>
-        <FaRegLightbulb className="h-8 mb-2 ml-2" />
+        <FaRegLightbulb className="h-8 mb-2 ml-2 md:text-2xl" />
       </button>
     </header>
   );

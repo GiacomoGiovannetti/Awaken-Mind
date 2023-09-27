@@ -10,19 +10,19 @@ export const Soundtracks = () => {
 
   //creazione elementi soundtracks
   const soundtrackItems = soundtracks.map((sound) => (
-    <div key={sound.id} className="flex flex-col items-center m-2">
+    <div key={sound.id} className="flex flex-col items-center m-2 ">
       <button
-        className="border-2 rounded-full p-3 border-slate-800 mb-1 hover:bg-slate-800 hover:text-amber-500 transition-colors duration-250 ease-in"
+        className="border-2 rounded-full p-3 border-slate-800 mb-1 hover:bg-slate-800 hover:text-amber-500 transition-colors duration-250 ease-in md:p-5"
         onClick={() => playSoundtrack(sound.src)}
       >
         {sound.icon}
       </button>
       <p
-        className={`text-lg font-semibold px-1 ${
+        className={`text-lg font-semibold px-1 text-center${
           isPlaying && soundtrack === sound.src
             ? "border-x-2 border-slate-800 rounded"
             : ""
-        }`}
+        } md:text-2xl`}
       >
         {sound.id}
       </p>
@@ -39,7 +39,9 @@ export const Soundtracks = () => {
 
   return (
     <div className="soundtracks flex flex-col justify-center mt-6">
-      <div className="grid grid-rows-4 grid-cols-2 mb-3">{soundtrackItems}</div>
+      <div className="grid grid-rows-4 grid-cols-2 mb-3 md:grid-rows-2 md:grid-cols-4">
+        {soundtrackItems}
+      </div>
       <AudioManager
         audio={soundtrack}
         isPlaying={isPlaying}

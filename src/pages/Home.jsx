@@ -9,11 +9,13 @@ export const Home = () => {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <h1 className="mt-5 text-4xl font-semibold ">Awaken Mind</h1>
-      <h3 className="mt-2 mx-2 text-xl text-center">
+      <h1 className="mt-5 text-4xl font-semibold md:text-6xl md:mt-10">
+        Awaken Mind
+      </h1>
+      <h3 className="mt-2 mx-2 text-xl text-center md:text-3xl md:mt-4">
         Tame your mind and taste the joy of liberation
       </h3>
-      <div className="flex flex-col items-center mt-5">
+      <div className="flex flex-col items-center mt-5 md:mt-10">
         <div
           className="flex flex-col items-center"
           onClick={() => {
@@ -42,7 +44,7 @@ export const Home = () => {
         <img
           src={meditatingGuy}
           alt="meditating-guy"
-          className="h-72 object-contain mt-4"
+          className="h-72 object-contain mt-4 md:h-96 md:mt-12"
         ></img>
       </div>
     </section>

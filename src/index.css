@@ -19,6 +19,8 @@
     @apply ease-in;
     @apply active:text-slate-700;
     @apply active:border-slate-700;
+    @apply md:mt-5;
+    @apply md:text-2xl;
   }
 
   .mobile-menu {
@@ -29,6 +31,9 @@
     @apply px-2;
     @apply hover:scale-105;
     @apply active:text-slate-700;
+    @apply md:my-4;
+    @apply md:mx-4;
+    @apply md:px-4;
   }
 
   .desktop-menu {
@@ -65,6 +70,8 @@
     @apply ease-in;
     @apply active:text-slate-700;
     @apply active:border-slate-700;
+    @apply md:px-4;
+    @apply md:py-2;
   }
 }
 
