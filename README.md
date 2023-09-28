@@ -35,7 +35,46 @@ The project had also to include some specific technologies like:
 
 ### My Idea:
 
+My Idea for this project was to build it around 4 pages:
+
+- Homepage: Where the user lands as he opens the app, it had to include the navigation buttons to the other pages.
+- Custom Meditation: A place where the user could practice meditation on his terms, by setting up a custom timer and choosing his soundtrack.
+- Guided Meditation: Here the user can practice meditation by following some guided meditations while choosing the soundtrack he wants to have in the background
+- First Steps: The scope for this page is to guide users new to meditation through its basic concepts.
+
+To navigate through those pages i thought about a navBar that would change his links based on the page the user is on.
+
 ## :mag: How it works
+
+As you land in the app there are a few elements visible:
+
+- A simple header made by the app logo, the app name and a button to toggle the dark mode
+- A Title with the app name and a subtile with the slogan
+- The navigation buttons to go to the other pages of the app
+- An image referencing meditation
+- A simple footer
+  ![Screenshot of the homepage]()
+
+The meditation pages as very similar with each other, they are based on the same components :
+
+- Timer component : where all the states regarding the timer are held, with his jsx and styling. It also includes the buttons to start/stop/pause the timer and their related logic.
+- Soundtrack component : here are held the states related to the soundtracks as their jsx and styling. Inside of it we can find the audio manager component which handle the playing soundtrack and its volume.
+
+Differences between Custom and Guided Meditation pages :
+
+- Custom Meditations include the duration buttons component which is responsible to provide the timer a given duration based on fixed values by click the relative buttons or on a custom value by specifying it in the input and then submitting it.
+
+- Guided Meditations has the menu guided meditations component which displays a drop down menu containing the guided meditations and their related logic, the user can chose one simply by clicking it. The timer duration will be automatically set to the duration of the guided meditation. In this component we can also find the audio manager component in order to manage the playing guided meditation and its volume, which is separated from the soundtrack volume.
+
+To be noted in order for the app to work the user has to select a duration for the timer if he is on the custom meditation page or select a guided meditation if he is on the guided meditation page otherwise there will be an alert and the timer would not start.
+![Screenshot of the custom meditation page]()
+![Screenshot of the guided meditation page]()
+
+The First Steps page is made by a series of drop down text cards containing the answer to the relative question. The answer is shown as soon as the user click on one of the question and will automatically close when he clicks on another question.
+![Screenshot of the first steps page]()
+
+The App gives the possibility to toggle dark mode, in order to set the app color to a darker shade.
+![Screenshot ot the dark mode]()
 
 ## :keyboard: Languages
 
@@ -61,7 +100,7 @@ That's my project, try it here: [Awaken Mind](https://awaken-mind.netlify.app/)
 
 ## :warning: Issues
 
-At the moment the project should run perfectly. In case you find some issues let me know!
+At the moment the project should run without problems. In case you find some issues let me know!
 
 ## :email: Contact Me
 
