@@ -11,11 +11,27 @@
 - [Languages](#keyboard-languages)
 - [Framework](#hammer_and_pick-framework)
 - [Libraries](#books-libraries)
+
+* [Bundler](#package-bundler)
+
 - [Try it](#computer-try-it)
 - [Issues](#warning-issues)
 - [Contact Me](#email-contact-me)
 
 ## :floppy_disk: About the project
+
+This is a project realized for [Start2Impact's](https://www.start2impact.it/) -React- module of the Full Stack Web Developer course. For this project i had to build a Web app to practice meditation, the app had to include some features such as :
+
+- A timer programmable by the user
+- The timer could be stopped or resumed
+- References about meditation
+- Intuitive UX/UI
+
+The project had also to include some specific technologies like:
+
+- React Router
+- React Hooks
+- Context API / Redux
 
 ### My Idea:
 
@@ -28,12 +44,16 @@
 
 ## :hammer_and_pick: Frameworks
 
-- React
-- Tailwind CSS
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## :books: Libraries
 
-- [nanoid](https://www.npmjs.com/package/nanoid)
+- [Nanoid](https://www.npmjs.com/package/nanoid)
+
+## :package: Bundler
+
+- [Vite](https://vitejs.dev/)
 
 ## :computer: Try it!
 
