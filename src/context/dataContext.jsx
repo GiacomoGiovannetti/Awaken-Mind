@@ -36,7 +36,7 @@ export const DataProvider = ({ children }) => {
         >
           Guided Meditations
         </NavLink>
-        <NavLink to="/first-steps" className="mobile-menu lg:desktop-menu ">
+        <NavLink to="/first-steps" className="mobile-menu lg:desktop-menu">
           First Steps
         </NavLink>
       </>

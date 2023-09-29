@@ -19,11 +19,11 @@ export default function App() {
   return (
     <PathProvider>
       <DataProvider>
-        <Router>
-          <div className={`${darkMode ? "dark" : ""}`}>
-            <main className="flex flex-col font-Mooli h-auto min-h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 dark:from-slate-900 dark:via-slate-900  dark:to-slate-800 dark:text-amber-500">
-              <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-              <TimerProvider>
+        <TimerProvider>
+          <Router>
+            <div className={`${darkMode ? "dark" : ""}`}>
+              <main className="flex flex-col font-Mooli h-auto min-h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 dark:from-slate-900 dark:via-slate-900  dark:to-slate-800 dark:text-amber-500">
+                <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
                 <Routes>
                   <Route exact path="/" element={<Home />}></Route>
                   <Route
@@ -36,11 +36,11 @@ export default function App() {
                   ></Route>
                   <Route path="/first-steps" element={<FirstSteps />}></Route>
                 </Routes>
-              </TimerProvider>
-              <Footer />
-            </main>
-          </div>
-        </Router>
+                <Footer />
+              </main>
+            </div>
+          </Router>
+        </TimerProvider>
       </DataProvider>
     </PathProvider>
   );

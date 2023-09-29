@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useRef } from "react";
 import PathContext from "../context/pathContext";
 import { FaBars } from "react-icons/fa";
 
-export const MobileMenu = ({ linkPresets }) => {
+export const MobileMenu = ({ linkPresets, setTimer }) => {
   const { pathName } = useContext(PathContext);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
@@ -31,7 +31,12 @@ export const MobileMenu = ({ linkPresets }) => {
         <FaBars className="text-xl md:text-3xl" />
       </button>
       {isOpen && (
-        <div className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 md:text-2xl dark:bg-slate-800/75">
+        <div
+          className="absolute right-0 flex flex-col w-34 z-10  rounded-lg text-lg font-semibold bg-amber-400/75 md:text-2xl dark:bg-slate-800/75"
+          onClick={() => {
+            setTimer(0);
+          }}
+        >
           {pathName === "/custom-meditations"
             ? linkPresets.customMed
             : pathName === "/guided-meditations"
