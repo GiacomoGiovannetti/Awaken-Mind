@@ -51,7 +51,7 @@ As you land in the app there are a few elements visible:
 - The navigation buttons to go to the other pages of the app
 - An image referencing meditation
 - A simple footer
-  ![Screenshot of the homepage](/src/assets/screenshots/homepage-light.jpg)
+  ![Screenshot of the homepage](src/assets/images/screenshots/homepage-light.jpg)
 
 The meditation pages are very similar with each other, since they are based on the same components :
 
