@@ -21,7 +21,7 @@ export const SetDurationButtons = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (customDuration != "") {
+    if (customDuration != "" && customDuration <= 180) {
       setTimer(customDuration * 60);
     }
   };

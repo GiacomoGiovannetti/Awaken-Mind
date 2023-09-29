@@ -2,7 +2,7 @@
 
 ## React Project by Giacomo Giovannetti
 
-### A Meditation app to practice meditations in a fast and simple way: by setting a timer for a custom duration or by following a guided meditation
+### A Meditation app to practice meditations in a fast and simple way by setting a timer for a custom duration or by following a guided meditation
 
 ## :bookmark_tabs: Index
 
@@ -11,9 +11,7 @@
 - [Languages](#keyboard-languages)
 - [Framework](#hammer_and_pick-framework)
 - [Libraries](#books-libraries)
-
-* [Bundler](#package-bundler)
-
+- [Bundler](#package-bundler)
 - [Try it](#computer-try-it)
 - [Issues](#warning-issues)
 - [Contact Me](#email-contact-me)
@@ -55,10 +53,10 @@ As you land in the app there are a few elements visible:
 - A simple footer
   ![Screenshot of the homepage]()
 
-The meditation pages as very similar with each other, they are based on the same components :
+The meditation pages are very similar with each other, since they are based on the same components :
 
 - Timer component : where all the states regarding the timer are held, with his jsx and styling. It also includes the buttons to start/stop/pause the timer and their related logic.
-- Soundtrack component : here are held the states related to the soundtracks as their jsx and styling. Inside of it we can find the audio manager component which handle the playing soundtrack and its volume.
+- Soundtrack component : here are held the states related to the soundtracks as their jsx and styling. Inside of it we can find the audio manager component which handles the playing soundtrack and its volume.
 
 Differences between Custom and Guided Meditation pages :
 
@@ -66,11 +64,11 @@ Differences between Custom and Guided Meditation pages :
 
 - Guided Meditations has the menu guided meditations component which displays a drop down menu containing the guided meditations and their related logic, the user can chose one simply by clicking it. The timer duration will be automatically set to the duration of the guided meditation. In this component we can also find the audio manager component in order to manage the playing guided meditation and its volume, which is separated from the soundtrack volume.
 
-To be noted in order for the app to work the user has to select a duration for the timer if he is on the custom meditation page or select a guided meditation if he is on the guided meditation page otherwise there will be an alert and the timer would not start.
+To be noted: in order for the app to work the user has to select a duration for the timer if he is on the custom meditation page, or select a guided meditation if he is on the guided meditation page. Otherwise there will be an alert and the timer would not start.
 ![Screenshot of the custom meditation page]()
 ![Screenshot of the guided meditation page]()
 
-The First Steps page is made by a series of drop down text cards containing the answer to the relative question. The answer is shown as soon as the user click on one of the question and will automatically close when he clicks on another question.
+The First Steps page is made by a series of drop down text cards containing the answer to the relative question. The answer is shown as soon as the user clicks on one of the questions and will automatically close when he clicks on another question.
 ![Screenshot of the first steps page]()
 
 The App gives the possibility to toggle dark mode, in order to set the app color to a darker shade.
