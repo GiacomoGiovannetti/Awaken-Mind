@@ -7,7 +7,7 @@ export const MobileMenu = ({ linkPresets, setTimer }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
 
-  //chiude il menu quando si clicca fuori di esso
+  //closes the menu when a click verifies outside of it
   const closeMenu = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsOpen(false);

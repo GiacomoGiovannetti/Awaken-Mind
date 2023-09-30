@@ -8,7 +8,7 @@ export const TimerProvider = ({ children }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [alertIsVisible, setAlertIsVisible] = useState(false);
 
-  //imposta durata timer
+  //Sets the timer duration
   const setTimer = (value) => {
     setTimerDuration(value);
     setTimerValue(value);

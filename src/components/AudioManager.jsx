@@ -3,22 +3,20 @@ import { useEffect, useRef, useState } from "react";
 import { FaVolumeHigh, FaVolumeLow, FaVolumeXmark } from "react-icons/fa6";
 
 export const AudioManager = ({ audio, isPlaying, componentFor }) => {
-  //state audioEl. / volume
   const soundtrackRef = useRef();
   const [soundtrackVolume, setSoundtrackVolume] = useState(0.5);
   const [showVolume, setShowVolume] = useState(false);
 
-  // funzione per impostare il volume delle soundtracks
+  //function to set the volume of the soundtracks
   const handleChange = (e) => {
     let volume = e.target.value;
     setSoundtrackVolume(volume);
   };
-
-  //verifica il component in cui si trova in modo da mostrare il testo corretto
+  //checks his parent component in order to display the correct text
   const componentVolumeName =
     componentFor === "soundtrack" ? "Soundtrack" : "Meditation";
 
-  //in base al valore del volume mostra un icona diversa
+  //based on the volume value displays a different icon
   const showVolumeIcon =
     soundtrackVolume >= 0.5 ? (
       <FaVolumeHigh className="ml-1 text-xl md:text-2xl md:ml-3" />
@@ -28,13 +26,13 @@ export const AudioManager = ({ audio, isPlaying, componentFor }) => {
       <FaVolumeXmark className="ml-1 text-xl md:text-2xl md:ml-3" />
     );
 
-  //per mostrare la barra volume
+  //function to show the volume bar
   const showVolumeBar = (e) => {
     e.stopPropagation();
     setShowVolume((prev) => !prev);
   };
 
-  //gestione aggiornamenti state relativi alle soundtracks
+  //handles the updates of state relative to the soundtracks
   useEffect(() => {
     const audioElement = soundtrackRef.current;
     if (isPlaying) {

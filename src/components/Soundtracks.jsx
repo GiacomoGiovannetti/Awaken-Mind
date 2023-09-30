@@ -8,7 +8,7 @@ export const Soundtracks = () => {
   const [soundtrack, setSoundtrack] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
 
-  //creazione elementi soundtracks
+  //creation of soundtrack elements
   const soundtrackItems = soundtracks.map((sound) => (
     <div key={sound.id} className="flex flex-col items-center m-2 ">
       <button
@@ -29,7 +29,7 @@ export const Soundtracks = () => {
     </div>
   ));
 
-  //funzione per far partire la soundtrack e fermarla
+  //function to start/pause the soundtrack
   const playSoundtrack = (sound) => {
     setSoundtrack(sound);
     if (soundtrack === sound || !isPlaying) {

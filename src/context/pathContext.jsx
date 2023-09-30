@@ -5,7 +5,7 @@ const PathContext = createContext("");
 export function PathProvider({ children }) {
   const [pathName, setPathName] = useState(window.location.pathname);
 
-  //Per aggiornare pathName
+  //updates pathNAme
   const updatePathName = (pathname) => {
     setPathName(pathname);
   };

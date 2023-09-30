@@ -17,7 +17,7 @@ export const FirstSteps = () => {
 
   const [prevOpen, setPrevOpen] = useState("");
 
-  //funzione per generare le card con le domande che al click mostrano la risposta
+  //function to generate the cards with the questions and the answer is shown by clicking it
   const questionElements = questions.map((question) => (
     <div
       key={question.id}
@@ -56,12 +56,12 @@ export const FirstSteps = () => {
     </div>
   ));
 
-  //funzione per mostrare la risposta e nascondere quella della domanda precedente
+  //function to show the answer and hide the one of the previous question
   const showAnswer = (e) => {
     let section =
       e.target.tagName === "DIV" ? e.target.id : e.target.parentElement.id;
-    //la condizione controlla che prevOpen non sia vuota oppure uguale a section
-    //e fa in modo che se avviene un clicci nella risposta uesta non venga chiusa
+    //the condition checks that prevOpen is not empty or equal to section and
+    //if the user cliks inside the answers body the card doesn't close
     if (!section.includes("answerBody")) {
       if (prevOpen != "" && prevOpen !== section) {
         setIsOpen((prev) => ({

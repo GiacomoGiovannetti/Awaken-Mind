@@ -7,7 +7,7 @@ export const SetDurationButtons = () => {
   const { setTimer } = useContext(TimerContext);
   const [customDuration, setCustomDuration] = useState("");
 
-  //gestione onChange per input
+  //handles onChange for the input
   const handleChange = (e) => {
     let value = e.target.value;
     let reg = /^[0-9]+$/;
@@ -17,7 +17,7 @@ export const SetDurationButtons = () => {
     }
   };
 
-  //gestione Submit
+  //handles submit
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ export const SetDurationButtons = () => {
     }
   };
 
-  //creazione pulsanti per preset durata
+  //creation of preset duration buttons
   const timePresetsElements = timePresets.map((preset) => {
     return (
       <button

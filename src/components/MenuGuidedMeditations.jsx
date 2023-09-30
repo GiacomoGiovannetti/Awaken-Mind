@@ -19,19 +19,19 @@ export const MenuGuidedMeditations = () => {
 
   const dropdownRef = useRef();
 
-  //funzione che al click apre il dropdown menu
+  //function opens the dropdown menu on click
   const showMenu = (e) => {
     setIsOpen((prev) => !prev);
   };
 
-  //funzione per chiudere il menu quando si verifica un clikc fuori di esso
+  //function closes menu when a click verifies outside of it
   const closeMenuOnOutsideClick = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsOpen(false);
     }
   };
 
-  //funzione per creare gli elementi del menu
+  //function to create menu elements
   const meditationsElements = meditations.map((meditation) => (
     <div
       className="grid grid-cols-4 items-center cursor-pointer font-semibold mobile-menu mx-3 my-4 md:text-xl md:mx-6 md:my-5"
@@ -43,7 +43,7 @@ export const MenuGuidedMeditations = () => {
     </div>
   ));
 
-  //funzione per impostare la meditazione selezionata
+  //function to set the selected meditation
   const selectMeditation = (e, sound) => {
     let meditation = {
       title: `${

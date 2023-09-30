@@ -24,7 +24,7 @@ export const Timer = ({ darkMode }) => {
   const [seconds, setSeconds] = useState("0" + 0);
   const [minutes, setMinutes] = useState(0);
 
-  //Display durata meditazione dentro al cerchio
+  //display of the meditation duration inside the circle
   const timeElement = ({ remainingTime }) => {
     return (
       <div className="flex flex-row text-4xl font-semibold md:text-5xl">
@@ -38,7 +38,7 @@ export const Timer = ({ darkMode }) => {
     );
   };
 
-  //Fa partire il timer e controlla che la durata sia diversa da 0
+  //Starts the timer and checks that duration is not equal to 0
   const startTimer = (e) => {
     if (timerDuration === 0 && timerValue === 0) {
       setAlertIsVisible(true);
@@ -48,29 +48,29 @@ export const Timer = ({ darkMode }) => {
     }
   };
 
-  //ferma il timer e imposta i valori su 0
+  //Stops the timer and sets values to 0
   const stopTimer = () => {
     setTimer(0);
   };
 
-  //aggiornare i valori di minutes e seconds
+  //updates the values of minutes and seconds
   const updateTimerDisplay = () => {
     let secondsValue = Math.floor(timerValue % 60);
     setSeconds(secondsValue < 10 ? "0" + secondsValue : secondsValue);
     setMinutes(Math.floor(timerValue / 60));
   };
 
-  //ferma il timer al cambio di scheda del browser
+  //stops the timer on browser tab change
   const onTabChange = () => {
     if (document.hidden && timerValue !== 0) {
       setIsRunning(false);
     }
   };
 
-  //dichiaro riferimento per intervallo
+  //interval ref declaration
   let intervalRef = useRef();
 
-  //aggiorna il valore del timer
+  //updates the value of the timer
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
