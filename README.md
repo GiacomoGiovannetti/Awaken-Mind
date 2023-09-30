@@ -52,7 +52,7 @@ As you land in the app there are a few elements visible:
 - An image referencing meditation
 - A simple footer
 
-  ![Screenshot of the homepage](src/assets/images/screenshots/homepage-light.jpg)
+<img src="src/assets/images/screenshots/homepage-light.jpg" alt="Screenshot meditation page light mode" width="70%">
 
 The meditation pages are very similar with each other, since they are based on the same components :
 
@@ -73,10 +73,15 @@ To be noted: in order for the app to work the user has to select a duration for 
 </p>
 
 The First Steps page is made by a series of drop down text cards containing the answer to the relative question. The answer is shown as soon as the user clicks on one of the questions and will automatically close when he clicks on another question.
-![Screenshot of the first steps page](src/assets/images/screenshots/first-steps.jpg)
+<img src="src/assets/images/screenshots/first-steps.jpg" alt="Screenshot first stpes light mode" width="70%">
 
 The App gives the possibility to toggle dark mode, in order to set the app color to a darker shade.
-![Screenshot Homepage dark mode](src/assets/images/screenshots/homepage-dark.jpg) ![Screenshot Meditations dark mode](src/assets/images/screenshots/meditations-dark.jpg) ![Screenshot First Steps dark mode](src/assets/images/screenshots/first-steps-dark.jpg)
+
+<p align="center">
+<img src="src/assets/images/screenshots/homepage-dark.jpg" alt="Screenshot homepage page dark mode" width="33%">
+<img src="src/assets/images/screenshots/meditations-dark.jpg" alt="Screenshot meditations page dark mode" width="33%">
+<img src="src/assets/images/screenshots/first-steps-dark.jpg" alt="Screenshot first steps page dark mode" width="33%">
+</p>
 
 ## :keyboard: Languages
 
