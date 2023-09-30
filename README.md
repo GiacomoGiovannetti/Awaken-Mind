@@ -66,8 +66,8 @@ Differences between Custom and Guided Meditation pages :
 - Guided Meditations has the menu guided meditations component which displays a drop down menu containing the guided meditations and their related logic, the user can chose one simply by clicking it. The timer duration will be automatically set to the duration of the guided meditation. In this component we can also find the audio manager component in order to manage the playing guided meditation and its volume, which is separated from the soundtrack volume.
 
 To be noted: in order for the app to work the user has to select a duration for the timer if he is on the custom meditation page, or select a guided meditation if he is on the guided meditation page. Otherwise there will be an alert and the timer would not start.
-<img src="src/assets/images/screenshots/custom-meditation.jpg" alt="Screenshot custom meditation page" width="50%">
-<img src="src/assets/images/screenshots/guided-meditations.jpg" alt="Screenshot guided meditation page" width="50%">
+<img src="src/assets/images/screenshots/custom-meditation.jpg" alt="Screenshot custom meditation page" width="45%">
+<img src="src/assets/images/screenshots/guided-meditations.jpg" alt="Screenshot guided meditation page" width="45%">
 
 The First Steps page is made by a series of drop down text cards containing the answer to the relative question. The answer is shown as soon as the user clicks on one of the questions and will automatically close when he clicks on another question.
 ![Screenshot of the first steps page](src/assets/images/screenshots/first-steps.jpg)
