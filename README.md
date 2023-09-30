@@ -2,14 +2,14 @@
 
 ## React Project by Giacomo Giovannetti
 
-### A Meditation app to practice meditations in a fast and simple way by setting a timer for a custom duration or by following a guided meditation
+### A Meditation app to practice meditations in a fast and simple way by setting up a timer for a custom duration or by following a guided meditation
 
 ## :bookmark_tabs: Index
 
 - [About the project](#floppy_disk-about-the-project)
 - [How it works](#mag-how-it-works)
 - [Languages](#keyboard-languages)
-- [Framework](#hammer_and_pick-framework)
+- [Frameworks](#hammer_and_pick-frameworks)
 - [Libraries](#books-libraries)
 - [Bundler](#package-bundler)
 - [Try it](#computer-try-it)
