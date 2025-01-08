@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Alert } from '../components/Alert';
 import { MenuGuidedMeditations } from '../components/MenuGuidedMeditations';
 import { Soundtracks } from '../components/Soundtracks';

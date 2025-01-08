@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { useContext, useState } from 'react';
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa6';
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import DataContext from '../context/dataContext';
 
 export const FirstSteps = () => {

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Alert } from '../components/Alert';
 import { SetDurationButtons } from '../components/SetDurationButtons';
 import { Soundtracks } from '../components/Soundtracks';
