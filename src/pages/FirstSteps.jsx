@@ -2,7 +2,6 @@ import { nanoid } from 'nanoid';
 import { useContext, useState } from 'react';
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa6';
 
-import { Helmet } from 'react-helmet-async';
 import DataContext from '../context/dataContext';
 
 export const FirstSteps = () => {
@@ -83,9 +82,6 @@ export const FirstSteps = () => {
 
   return (
     <div className='h-auto ' onClick={showAnswer}>
-      <Helmet>
-        <title>First Steps - Awaken Mind</title>
-      </Helmet>
       {questionElements}
     </div>
   );
