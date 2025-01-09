@@ -28,6 +28,31 @@ export default function App() {
       <DataProvider>
         <TimerProvider>
           <Router>
+            <meta
+              name='keywords'
+              content='meditation, mindfulness, meditation app, awaken mind, guided meditation'
+            />
+            <meta
+              name='description'
+              content='Awaken Mind is a Web App used to practice meditation by setting up a custom timer or by following a guided meditation.'
+            />
+            <meta
+              name='google-site-verification'
+              content='y4sP0qNnRc1AWh_q7FJ_c8e3fKKiQ-fqoqhcRHUD4eI'
+            />
+            <meta property='og:title' content='Awaken Mind' />
+            <meta property='og:image' content='/logo-favicon.svg' />
+            <meta property='og:image:type' content='image/svg' />
+            <meta
+              property='og:url'
+              content='https://awaken-mind.netlify.app/'
+            />
+            <meta
+              property='og:description'
+              content='Awaken Mind is a Web App used to
+                practice meditation by setting up a custom timer or by following a guided
+                meditation.'
+            />
             <div className={`${darkMode ? 'dark' : ''}`}>
               <main className='flex flex-col font-Mooli h-auto min-h-screen text-slate-800 bg-gradient-to-b from-amber-500  via-yellow-400 to-blue-300 dark:from-slate-900 dark:via-slate-900  dark:to-slate-800 dark:text-amber-500'>
                 <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
